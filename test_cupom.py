@@ -26,3 +26,12 @@ def test_percentual_zero_e_rejeitado():
     resultado = desconto_valido(percentual)
     # Verificar
     assert resultado is False
+
+
+def test_percentual_com_virgula_dentro_da_faixa_e_rejeitado():
+    # Preparar
+    percentual = MAXIMO - 0.5  # 25.5
+    # Agir
+    resultado = desconto_valido(percentual)
+    # Verificar
+    assert resultado is False
